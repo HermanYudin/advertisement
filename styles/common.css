@@ -1,0 +1,18 @@
+:root {
+  --c-white: #fff;
+  --c-black: #000;
+  --c-gold: #bb945f;
+  --c-gray: #bfbfbf;
+  --f-inter: "inter", sans-serif;
+  --f-forum: "forum", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

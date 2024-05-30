@@ -1,0 +1,57 @@
+.tooltip {
+  display: none;
+  max-width: 135px;
+  background-color: var(--c-white);
+  z-index: 5;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px 10px 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.tooltip_cross {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--c-white);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+}
+
+.tooltip_cross-img {
+  width: 40px;
+  height: 40px;
+}
+
+.tooltip:after {
+  content: "";
+  background-image: url("./png/cross.jpg");
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+.tooltip-active {
+  display: flex;
+}
+
+.tooltip_text {
+  font-size: 10px;
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  color: var(--c-gray);
+  line-height: 1.1em;
+  margin: 0;
+  position: relative;
+}

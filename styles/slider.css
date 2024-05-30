@@ -1,0 +1,196 @@
+.wrapper {
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.card-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 192px;
+  gap: 10px;
+  scroll-snap-type: x;
+  scroll-padding-inline: 24px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overflow-x: auto;
+  margin: 0 20px;
+}
+
+.card-wrapper.grab {
+  user-select: none;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.card-wrapper:hover .prev {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-wrapper:hover .next {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.prev {
+  background-image: url("data:image/svg+xml,%3Csvg%20width='16'%20height='16'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20transform='rotate(180)%20translate(-16,-16)'%20d='m10.586%208.003-4.79%204.793a1%201%200%200%200%201.415%201.414l5.496-5.5a1%201%200%200%200%200-1.414l-5.496-5.5A1%201%200%200%200%205.796%203.21l4.79%204.793Z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: var(--c-white);
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  top: 38%;
+  left: 10px;
+  z-index: 5;
+}
+
+.next {
+  background-image: url("data:image/svg+xml,%3Csvg%20width='16'%20height='16'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='m10.586%208.003-4.79%204.793a1%201%200%200%200%201.415%201.414l5.496-5.5a1%201%200%200%200%200-1.414l-5.496-5.5A1%201%200%200%200%205.796%203.21l4.79%204.793Z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: var(--c-white);
+  position: absolute;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s, transform 0.3s;
+  top: 38%;
+  right: 10px;
+  z-index: 5;
+}
+
+.card-item {
+  position: relative;
+  max-width: 192px;
+  max-height: 260px;
+  border-radius: 20px;
+  scroll-snap-align: start;
+}
+
+.card-item_advertisement {
+  color: var(--c-white);
+  font-family: Fira Sans, sans-serif;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: 4;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 1.5em;
+  border-radius: 30px;
+  padding: 0 0.8em 0 0.8em;
+  background: rgba(45, 45, 45, 0.3);
+}
+
+.card-item_info {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(45, 45, 45, 0.3);
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+  gap: 1px;
+  right: 3px;
+  top: 3px;
+}
+
+.card-item_img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.info_dot {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: var(--c-gray);
+}
+
+.card-item {
+  position: relative;
+  border-radius: 20px;
+}
+
+.card-item_disc {
+  max-width: 172px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 2;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0px 10px;
+  margin: 0;
+  color: var(--c-white);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card-item_disc-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgb(27, 46, 85) 0%,
+    rgb(27, 46, 85) 54px,
+    transparent 100%
+  );
+  height: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .prev,
+  .next {
+    display: none;
+  }
+
+  .card-wrapper {
+    width: 625px;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-wrapper {
+    width: 425px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-wrapper {
+    width: 225px;
+  }
+}
