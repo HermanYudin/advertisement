@@ -21,7 +21,6 @@ cardImageAndLink.forEach((item) => {
 
 arrowPrev.addEventListener("click", () => {
   cardWrapper.scrollLeft -= widthToScroll;
-  console.log(cardWrapper.scrollLeft);
 });
 
 arrowNext.addEventListener("click", () => {
