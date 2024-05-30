@@ -22,13 +22,10 @@ cardImageAndLink.forEach((item) => {
 arrowPrev.addEventListener("click", () => {
   cardWrapper.scrollLeft -= widthToScroll;
   console.log(cardWrapper.scrollLeft);
-  console.log(widthToScroll);
 });
 
 arrowNext.addEventListener("click", () => {
   cardWrapper.scrollLeft += widthToScroll;
-  console.log(cardWrapper.scrollLeft);
-  console.log(widthToScroll);
 });
 
 const isTouchDevice = window.matchMedia("(max-width: 1000px)");
